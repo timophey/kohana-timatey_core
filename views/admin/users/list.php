@@ -36,7 +36,7 @@
  
         <div>
             <div>
-                <table>
+                <table border>
                     <thead>
                     <tr>
                         <th><?php echo __('ID') ?></th>

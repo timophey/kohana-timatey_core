@@ -11,6 +11,7 @@
  *
  * @author     Novichkov Sergey(Radik) <novichkovsergey@yandex.ru>
  * @copyright  Copyrights (c) 2012 Novichkov Sergey
+ * 
  */
 ?>
 <form action="<?php echo URL::site('/admin/users/save') ?>" method="post" name="user-form">

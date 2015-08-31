@@ -194,7 +194,7 @@ class Controller_Admin_Users extends Controller_Admin_Common {
                 ->set('message_type', 'success');
  
             // redirect to list page
-            HTTP::redirect(URL::site('/admin/users'));
+            HTTP::redirect('admin/users');
         }
  
         // Roles list
