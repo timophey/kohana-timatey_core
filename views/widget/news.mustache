@@ -1,0 +1,13 @@
+<div class="news">
+	<b>Новости</b>
+	<ul>
+	{{#items}}
+		<li>
+			<b><a href="{{base_url}}news/{{id}}">{{title}}</a></b>
+			{{#anons}}<p>{{.}}</p>{{/anons}}
+			<!--<time>{{time}}</time>-->
+			<a href="{{base_url}}news/{{id}}" class="detail">подробнее...</a>
+		</li>
+	{{/items}}
+	</ul>
+</div>

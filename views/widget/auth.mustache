@@ -1,0 +1,7 @@
+{{#logged_in}}
+	Вы: {{user.username}}
+	<a href="{{base_url}}logout">Выйти</a>
+{{/logged_in}}
+{{#_logged_out}}
+	<!--Войдите на <a href="{{log_in_url}}" target="_blank">форуме</a>-->
+{{/_logged_out}}

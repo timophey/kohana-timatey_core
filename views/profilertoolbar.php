@@ -1,0 +1,2 @@
+<?php
+	ProfilerToolbar::render(true);
