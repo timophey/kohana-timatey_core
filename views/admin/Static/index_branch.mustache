@@ -1,0 +1,18 @@
+	<tr>
+		<td>{{id}}</td>
+		<td>{{base_url}}{{path}}.html</td>
+		<td>{{name}}</td>
+		<td>
+			<a href="admin/static/edit/{{id}}">править</a>
+			<a href="{{base_url}}{{path}}" target=_blank>перейти</a>
+			<a href="admin/static/delete/{{id}}" onCtrck="return confirm('Точно удалить?');">удалить</a>
+		</td>
+		<td>{{sort}}</td>
+		<td>{{parent}}</td>
+		<td>{{forward_count}}</td>
+	</tr>
+	{{#forward_count}}
+		{{#forward}}
+			{{>admin/Static/index_branch}}
+		{{/forward}}
+	{{/forward_count}}

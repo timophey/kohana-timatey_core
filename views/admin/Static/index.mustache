@@ -1,22 +1,19 @@
-<table class="tim_tbl" align="center">
+<table class="tim_tbl" border>
 	<tr>
-		<td>Путь</td>
-		<td>Заголовок</td>
-		<td>Действия</td>
+				<td>id</td>
+				<td>Путь</td>
+				<td>Заголовок</td>
+				<td>Действия</td>
+				<td>Sort</td>
+				<td>Parent</td>
+				<td>Children</td>
 	</tr>
-{{#items}}
-	<tr>
-		<td>{{base_url}}{{path}}.html</td>
-		<td>{{caption}}</td>
-		<td>
-			<a href="/admin/static/edit/{{id}}">править</a>
-			<a href="{{base_url}}{{path}}.html" target=_blank>перейти</a>
-			<a href="/admin/static/delete/{{id}}" onClick="return confirm('Точно удалить?');">удалить</a>
-		</td>
-	</tr>
-{{/items}}
+	{{#items}}
+		{{>admin/Static/index_branch}}
+	{{/items}}
 </table>
 <h2>Новая</h2>
+
 <form method="post">
 	<table class="tim_tbl" align="center">
 	{{#form}}
