@@ -1,11 +1,17 @@
-<form method="post" accept-charset="utf-8">
-    
-    {{#ref}}<input type="hidden" name="referrer" value="{{.}}">{{/ref}}
-    <label for="username">Username:</label>
-    <input id="username" type="text" name="username" />
-    <br />
-    <label for="password">Password:</label>
-    <input id="password" type="password" name="password" />
-    <br />
-    <button type="submit">Login</button>
-</form>
+		<form method="post" action="login">
+			<input type="hidden" name="mode" value="login" />
+			<div class="row">
+				<label for="login">Логин или e-mail:</label>
+				<label class="field text"><input type="text" name="username" id="login" tabindex="1" value="" /></label>
+			</div>
+			<div class="row">
+				<label for="password">Пароль:</label>
+				<button type="submit" class="signin-btn" tabindex="3">Войти</button>
+				<label class="field password"><input type="password" name="password" id="password" tabindex="2" value="" /></label>
+			</div>
+		</form>
+		<div class="clear-container"></div>
+		<!--<p>
+			<a href="registraciya/register.html" class="register">Регистрация</a>
+			<a href="registraciya/forgot_password.html">Забыли пароль?</a>
+		</p>-->

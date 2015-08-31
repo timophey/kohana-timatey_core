@@ -37,7 +37,7 @@ class Controller_Auth extends Controller_Common{
 		
 		//Arr::log($this->user);
 		// Смотрим, вдруг юзера прислали откуда-то
-		$ref = $this->sess->get('auth_ref');
+		if($ref = $this->request->referrer()) if($ref != $this->request->url() && !$this->sess->get('auth_ref')) $this->sess->set('auth_ref',$ref);
 		// Проверям, вдруг пользователь уже зашел 
 		if(Auth::instance()->logged_in()){
 			//return HTTP::redirect('auth');
@@ -51,7 +51,7 @@ class Controller_Auth extends Controller_Common{
 				$redirect_to = ($ref && $ref == Arr::get($_POST,'referrer'))?$ref:'admin';
 				$this->sess->delete('auth_ref');
 				//print_r([$ref,Arr::get($_POST,'referrer'),$redirect_to]);
-				//HTTP::redirect($redirect_to);
+				HTTP::redirect($redirect_to);
 				}else{
 					$this->content = 'failed';
 				}
