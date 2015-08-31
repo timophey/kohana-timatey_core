@@ -48,7 +48,7 @@ class Controller_Auth extends Controller_Common{
 			$status = Auth::instance()->login($this->request->post('username'), $this->request->post('password'), true);// !!$this->request->post('remember')
 			//echo"$status";
 			if($status){
-				$redirect_to = ($ref && $ref == Arr::get($_POST,'referrer'))?$ref:'admin';
+				$redirect_to = $this->sess->get('auth_ref');//($ref && $ref == Arr::get($_POST,'referrer'))?$ref:'admin';
 				$this->sess->delete('auth_ref');
 				//print_r([$ref,Arr::get($_POST,'referrer'),$redirect_to]);
 				HTTP::redirect($redirect_to);
